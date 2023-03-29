@@ -560,7 +560,13 @@ export default {
     },
     beforeCreate: function () {
         if (this.$session.exists()) {
-            this.$router.push("/perusahaan");
+            if (this.$session.get("level") == null) {
+                this.$router.push("/lacak/home");
+            }else{
+                if (this.$session.get('level') === 'root') {
+                    this.$router.push("/perusahaan");
+                }
+            }
         } else {
             this.$router.push("/");
         }

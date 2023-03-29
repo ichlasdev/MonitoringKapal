@@ -16,6 +16,8 @@ import Sign from "./components/Sign.vue";
 import Perusahaan from "./components/Perusahaan.vue";
 import Customer from "./components/Customer.vue";
 import PrivacyPolice from "./components/PrivacyPolice.vue";
+import Login from "./components/tracking/Login.vue";
+import Home from "./components/tracking/Home.vue";
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -52,6 +54,16 @@ const routes = [{
         name: "Privacy - Police",
         path: "/privacy-police",
         component: PrivacyPolice,
+    },
+    {
+        name: "Login Lacak",
+        path: "/lacak",
+        component: Login,
+    },
+    {
+        name: "Home Lacak",
+        path: "/lacak/home",
+        component: Home,
     },
 ];
 

@@ -208,7 +208,7 @@ export default {
         if (result.isConfirmed) {
           this.$session.clear()
           this.$session.destroy()
-          this.$router.go()
+          this.$router.go('/')
         } 
       });
     },

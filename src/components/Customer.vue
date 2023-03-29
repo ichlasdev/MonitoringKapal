@@ -612,14 +612,22 @@ export default {
         };
     },
     beforeCreate: function () {
-        if(this.$session.exists()) {
-            this.$router.push("/customers");
+        if (this.$session.exists()) {
+            if (this.$session.get("level") == null) {
+                this.$router.push("/lacak/home");
+            }else{
+                if (this.$session.get('level') === 'root') {
+                    this.$router.push("/customers");
+                }
+            }
         } else {
             this.$router.push("/");
         }
     },
     created() {
-        this.getCustomer();
+        if(this.$session.get('level') === 'root') {
+            this.getCustomer();
+        }
     },
     mounted() {
         this.idakun = this.$session.get("level");
