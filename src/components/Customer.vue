@@ -859,6 +859,7 @@ export default {
                 this.showloadingBar();
 
                 this.formKapal.tipeForm = "Tambah";
+                console.log(this.formKapal);
                 if(this.formKapal.sn) {
                     const response = await axios.put(`https://track.kapalpintar.co.id/api/updatepemilikkapal/${this.formKapal.sn}`, this.formKapal);
 
