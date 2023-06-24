@@ -857,7 +857,7 @@ export default {
         async createKapal() {
             try {
                 this.showloadingBar();
-
+                console.log();
                 this.formKapal.tipeForm = "Tambah";
                 console.log(this.formKapal);
                 if(this.formKapal.sn) {
